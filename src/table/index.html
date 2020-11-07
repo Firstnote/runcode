@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <th colspan="1" class="confluenceTh">模块</th>
+          <th colspan="1" class="confluenceTh">方法</th>
+          <th class="confluenceTh">接口含义</th>
+          <th class="confluenceTh">使用示例</th>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Storage</td>
+          <td colspan="1" class="confluenceTd">readFile</td>
+          <td class="confluenceTd">从文件中读取数据</td>
+          <td class="confluenceTd">
+            Adapter.Storage.readFile('test.txt')<br />.then(<br />(res) =&gt;<br />(this.readfileValue =<br />'x=' + JSON.stringify(res.x) + '; y=' + JSON.stringify(res.y))<br />)<br />.catch((err) =&gt; (this.readfileValue = JSON.stringify(err)))
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">writeFile</td>
+          <td class="confluenceTd">写数据到文件</td>
+          <td class="confluenceTd">
+            Adapter.Storage.writeFile('test.txt', {<br />x: 1,<br />y: '放 假 了&amp; 开 心',<br />}).then((res) =&gt; {<br />this.writefileValue = JSON.stringify(res)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">readLocal</td>
+          <td colspan="1" class="confluenceTd">
+            读取app本地变量：一般用来各业务之间传递数据，如读取登录状态、交易账户等
+          </td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Storage.readLocal('tfrom', (ret) =&gt; {<br />this.readLocalValue = JSON.stringify(ret.data)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">writeLocal</td>
+          <td colspan="1" class="confluenceTd">写入/更新 app本地变量</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Storage.writeLocal('colorstyle', true, function(res) {<br />self.writeLocalValue = JSON.stringify(res)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">readMemory</td>
+          <td colspan="1" class="confluenceTd">
+            从内存中读数据；微信小程序里不支持readMemory函数；站外h5存储sessionStorage；站内使用reqreadmap
+          </td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Storage.readMemory('test', (ret) =&gt; {<br />this.readMemoryValue = JSON.stringify(ret.data)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">writeMemory</td>
+          <td colspan="1" class="confluenceTd">
+            写数据到内存，一般用作数据临时缓存
+          </td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Storage.writeMemory('test', '测 试 &amp; 中 文', (res) =&gt;{<br />this.writeMemoryValue = JSON.stringify(res)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Router</td>
+          <td colspan="1" class="confluenceTd">redirectTo</td>
+          <td class="confluenceTd">
+            页面重定向（关闭当前页面，在当前的webview容器中打开新的url）站内使用action1964; 站外使用普通href设定window.location.href
+          </td>
+          <td class="confluenceTd">
+            Adapter.Router.redireactTo("/test/test.html")
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">navigateTo</td>
+          <td colspan="1" class="confluenceTd">
+            打开新的页面（当前页面不变，在新的webview容器中打开url），站外是新窗口打开window.open，站内是新开webview,action 10061
+          </td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Router.navigateTo("/test/test.html")
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">back</td>
+          <td colspan="1" class="confluenceTd">页面返回; history.go</td>
+          <td colspan="1" class="confluenceTd">Adapter.Router.back(1)</td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">close</td>
+          <td colspan="1" class="confluenceTd">
+            关闭页面（会关闭webview容器）;站内是调用的action3413,
+          </td>
+          <td colspan="1" class="confluenceTd">Adapter.Router.close()</td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">openRNPage</td>
+          <td colspan="1" class="confluenceTd">打开RN页面 (仅站内支持)</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Router.openRNPage({<br />bundle: 'zlgstockbottom',<br />module: 'stockbottom',<br />params: {<br />market: 'us_stock',<br />stockCode: 'BABA',<br />marketCode: '24384',<br />},<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">openAppModule</td>
+          <td colspan="1" class="confluenceTd">打开原生模块(仅站内支持)</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Router.openAppModule({ action: 83008 })
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Version</td>
+          <td colspan="1" class="confluenceTd">getAppVersion</td>
+          <td colspan="1" class="confluenceTd">
+            获取版本号字符串。取版本号统一用这个函数来取。 不会重复去取(仅站内支持)
+          </td>
+          <td colspan="1" class="confluenceTd">
+            this.appVersion = await Adapter.Version.getAppVersion()
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Request</td>
+          <td colspan="1" class="confluenceTd">sendHttpRequest</td>
+          <td colspan="1" class="confluenceTd">http请求数据</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Request.sendHttpRequest({<br />url: '<a
+              href="http://gb.zhangle.com:8443/info/qqt/us_stock/stock_price"
+              >http://gb.zhangle.com:8443/info/qqt/us_stock/stock_price</a
+            >',<br />method: 'post',<br />headers: {<br />'Content-Type': 'application/x-www-form-urlencoded',<br />},<br />params: {<br />code: 'BABA',<br />marketCode: '24384',<br />},<br />})<br />.then((res) =&gt; {<br />this.httpResponse = JSON.stringify(res.data)<br />})<br />.catch((err) =&gt; {<br />this.httpResponse = JSON.stringify(err)<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">sendMobilestockRequest</td>
+          <td colspan="1" class="confluenceTd">
+            mobilestock请求数据；对reqxml错误码进行了处理，正常的返回BINDATA,失败的返回ERRORMESSAGE
+          </td>
+          <td colspan="1" class="confluenceTd">
+            try {<br />let data = await Adapter.Request.sendMobilestockRequest(<br />27006,<br />'/financing/channel/v3/current_finance',<br />{}<br />)<br />this.mobilestockResponse = JSON.stringify(data)<br />} catch (e) {<br />this.mobilestockResponse = '请求失败：' + JSON.stringify(e)<br />}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Env</td>
+          <td colspan="1" class="confluenceTd">setPlatformName</td>
+          <td colspan="1" class="confluenceTd">
+            手动设置当前环境（有时候想在pc上模拟native环境）
+          </td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">getPlatFormName</td>
+          <td colspan="1" class="confluenceTd">
+            获取当前运行平台:站内、站外、小程序
+          </td>
+          <td colspan="1" class="confluenceTd">
+            this.platFrom = Adapter.Env.getPlatFormName()
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">getNativeAppName</td>
+          <td colspan="1" class="confluenceTd">
+            异步接口：判断当前在哪个app：行知、全球通、财富通、浏览器、微信
+          </td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.Env.getNativeAppName().then((res) =&gt; (this.nativeName = res))
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isNative</td>
+          <td colspan="1" class="confluenceTd">判断是否为站内环境</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isH5</td>
+          <td colspan="1" class="confluenceTd">判断是否为站外环境</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isWeChat</td>
+          <td colspan="1" class="confluenceTd">判断是否为微信小程序环境</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isMobile</td>
+          <td colspan="1" class="confluenceTd">
+            判断是否为移动设备，包括手机、pad
+          </td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isAndroid</td>
+          <td colspan="1" class="confluenceTd">判断是否为android平台</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIOS10</td>
+          <td colspan="1" class="confluenceTd">[isIOS10 判断是否为IOS 10]</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isWP</td>
+          <td colspan="1" class="confluenceTd">判断是否为Windows Phone平台</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIPhone</td>
+          <td colspan="1" class="confluenceTd">判断是否为iphone</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIphoneX</td>
+          <td colspan="1" class="confluenceTd">判断是否是iphonex</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIphoneXSMax</td>
+          <td colspan="1" class="confluenceTd">判断是否是xs</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIphoneXR</td>
+          <td colspan="1" class="confluenceTd">判断是否是xr</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isIPad</td>
+          <td colspan="1" class="confluenceTd">判断是否为ipad</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isWeibo</td>
+          <td colspan="1" class="confluenceTd">判断是否为weibo</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">isQQ</td>
+          <td colspan="1" class="confluenceTd">判断是否为qq</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Talkingdata</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">Utils</td>
+          <td colspan="1" class="confluenceTd">isValidVersion</td>
+          <td colspan="1" class="confluenceTd">判断是否是合法版本字符串</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">versionValue</td>
+          <td colspan="1" class="confluenceTd">
+            把版本号转为数字，便于比较;计算方法：主版本差1计10000，次版本差1计100，小版本差1计1<br />* 比如：3.0.2 计算为： 3 * 10000 + 0 * 100 + 2 = 30002
+          </td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">versionCompare</td>
+          <td colspan="1" class="confluenceTd">版本比较</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">getUrlParameter</td>
+          <td colspan="1" class="confluenceTd">获取url参数值</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">formatMoney</td>
+          <td colspan="1" class="confluenceTd">
+            格式化金额<br />* 比如：formatMoney("138000.245") 或 formatMoney(138000.245) = "138,000.25"
+          </td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">
+            <p>getNative()：</p>
+            <p>
+              会提示只有在「行知/财富通/全球通」环境才能获取到此接口；相对比较封闭，方法由其他模块到处，这里介绍常用的几个方法；
+            </p>
+          </td>
+          <td colspan="1" class="confluenceTd">setWebTitle</td>
+          <td colspan="1" class="confluenceTd">设置原生标题</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.getNative().Bridge.setWebTitle(<br />'7.0.0',<br />'测试修改主标题',<br />'副标题'<br />)
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd">其他方法根据需求持续加入</td>
+          <td colspan="1" class="confluenceTd">signNatureKH&nbsp;</td>
+          <td colspan="1" class="confluenceTd">手写签名原生 开户业务使用</td>
+          <td colspan="1" class="confluenceTd">
+            Adapter.getNative().CFT.signNatureKH({<br />url: '',<br />val: 'globalsignature',<br />idNo: '1234',<br />showSignature: 1<br />})
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">takePhoto</td>
+          <td colspan="1" class="confluenceTd">原生调用摄像头 拍照</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">scanBankCard</td>
+          <td colspan="1" class="confluenceTd">原生扫描银行卡</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">faceDetection</td>
+          <td colspan="1" class="confluenceTd">活体检测</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">changeFontSize</td>
+          <td colspan="1" class="confluenceTd">设置字体大小</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">getPhoneBook</td>
+          <td colspan="1" class="confluenceTd">获取本地通讯录</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+        <tr>
+          <td colspan="1" class="confluenceTd"><br /></td>
+          <td colspan="1" class="confluenceTd">biometric</td>
+          <td colspan="1" class="confluenceTd">生物识别</td>
+          <td colspan="1" class="confluenceTd"><br /></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

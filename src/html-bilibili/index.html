@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="m-video-player">
+			<!-- <picture
+        ><source
+          type="image/webp"
+          srcset="
+            //i0.hdslb.com/bfs/archive/c5bf43a9e4b3e49b806d846669a245888431b93d.jpg@480w_270h_1c.webp
+          "
+          onLoad="performanceReport('video')"
+          class="pic" />
+        <img
+          src="//i0.hdslb.com/bfs/archive/c5bf43a9e4b3e49b806d846669a245888431b93d.jpg@480w_270h_1c"
+          alt=""
+          onLoad="performanceReport('video')"
+          class="pic"
+      /></picture> -->
+			<div id="bofqi" class="player"></div>
+			<div>
+				<script src="h5-player-v0.3.0.js?15308480"></script>
+				<script type="text/javascript">
+					function gqs(name) {
+						var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+						var r = window.location.search.substr(1).match(reg);
+						if (r != null) {
+							return unescape(r[2]);
+						}
+						return null;
+					}
+					var danmakuCount = 46967;
+					var bsource = window.bsource;
+					var options = {
+						aid: 456098516,
+						bvid: "BV1R5411W7Re",
+						cid: 203112470,
+						danmaku_number: danmakuCount > 10000 ? 30 : 150,
+						get_from_local: true,
+						// comment: "//api.bilibili.com/x/v1/dm/list.so?oid=203112470",
+						// image:
+						// 	"//i0.hdslb.com/bfs/archive/c5bf43a9e4b3e49b806d846669a245888431b93d.jpg@480w_270h_1c",
+						// video_url:
+						// 	"//cn-zjwz-cmcc-v-10.bilivideo.com/upgcxcode/70/24/203112470/203112470-1-16.mp4?expires=1592551200&platform=html5&ssig=4zDOEuL4_v720wTCAmPPYg&oi=3748135989&trid=1a52503572eb46518e75bc3bd4a87745h&nfc=1&nfb=maPYqpoel5MI3qOUX6YpRA==&mid=0&logo=80000000",
+						preload: "auto",
+						video_url:
+							"http://s3.cn-north-1.amazonaws.com.cn/cft-3g-test/cft/video/202005081588906856369.mp4",
+						duration: 972,
+						noRecommend: gqs("from") == "game",
+						newStyle: true,
+					};
+					var player = new BiliH5Player();
+					player.create(options);
+					window.player = player;
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
