@@ -1,0 +1,470 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201115.195059.27356.0.001.json",
+    "dumpEventTime": "2020-11-15T19:50:59Z",
+    "dumpEventTimeStamp": "1605441059325",
+    "processId": 27356,
+    "cwd": "/Users/qiaokou/qiaokou/projectfile/Firstnote/runcode",
+    "commandLine": [
+      "node",
+      "/Users/qiaokou/qiaokou/projectfile/Firstnote/runcode/src/practise/promise.js"
+    ],
+    "nodejsVersion": "v12.10.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "darwin",
+    "componentVersions": {
+      "node": "12.10.0",
+      "v8": "7.6.303.29-node.16",
+      "uv": "1.31.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.10.0/node-v12.10.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.10.0/node-v12.10.0.tar.gz"
+    },
+    "osName": "Darwin",
+    "osRelease": "18.7.0",
+    "osVersion": "Darwin Kernel Version 18.7.0: Tue Aug 20 16:57:14 PDT 2019; root:xnu-4903.271.2~2/RELEASE_X86_64",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 53881980,
+        "nice": 0,
+        "sys": 35242510,
+        "idle": 379902970,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 4683010,
+        "nice": 0,
+        "sys": 3715810,
+        "idle": 460535170,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 47707290,
+        "nice": 0,
+        "sys": 24948990,
+        "idle": 396281190,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 4439460,
+        "nice": 0,
+        "sys": 2955020,
+        "idle": 461539380,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 40990250,
+        "nice": 0,
+        "sys": 19649270,
+        "idle": 408297790,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 4163080,
+        "nice": 0,
+        "sys": 2577980,
+        "idle": 462192670,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 34300110,
+        "nice": 0,
+        "sys": 15441710,
+        "idle": 419195340,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8569U CPU @ 2.80GHz",
+        "speed": 2800,
+        "user": 3866220,
+        "nice": 0,
+        "sys": 2283920,
+        "idle": 462783440,
+        "irq": 0
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo0",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo0",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "lo0",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "fe80::1",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 1
+      },
+      {
+        "name": "en0",
+        "internal": false,
+        "mac": "f8:ff:c2:19:e4:08",
+        "address": "fe80::1042:1b0a:888e:6ce5",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 10
+      },
+      {
+        "name": "en0",
+        "internal": false,
+        "mac": "f8:ff:c2:19:e4:08",
+        "address": "192.168.2.120",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "awdl0",
+        "internal": false,
+        "mac": "7a:6e:bb:a5:fb:cb",
+        "address": "fe80::786e:bbff:fea5:fbcb",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 12
+      },
+      {
+        "name": "utun0",
+        "internal": false,
+        "mac": "00:00:00:00:00:00",
+        "address": "fe80::ee64:1c82:7d97:220e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 18
+      },
+      {
+        "name": "utun1",
+        "internal": false,
+        "mac": "00:00:00:00:00:00",
+        "address": "fe80::83c3:c5ba:abc8:3164",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 19
+      },
+      {
+        "name": "en5",
+        "internal": false,
+        "mac": "ac:de:48:00:11:22",
+        "address": "fe80::aede:48ff:fe00:1122",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 8
+      }
+    ],
+    "host": "192.168.2.120"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00000001001461d0",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, v8::Local<v8::String>) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000100078d95",
+      "symbol": "node::OnFatalError(char const*, char const*) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x000000010016e8d7",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x000000010016e873",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002f2605",
+      "symbol": "v8::internal::Heap::FatalProcessOutOfMemory(char const*) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002f3d2d",
+      "symbol": "v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002f0ae6",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002eea3c",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002fa114",
+      "symbol": "v8::internal::Heap::AllocateRawWithLightRetry(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002fa18f",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001002c8737",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001005e8f67",
+      "symbol": "v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00000001009288f9",
+      "symbol": "Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit [/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node]"
+    },
+    {
+      "pc": "0x00002b758a9c9a34",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2153840640,
+    "totalCommittedMemory": 2151834904,
+    "usedMemory": 2147246504,
+    "availableMemory": 47412128,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 31744,
+        "capacity": 261832,
+        "used": 31432,
+        "available": 230400
+      },
+      "new_space": {
+        "memorySize": 3670016,
+        "committedMemory": 2336368,
+        "capacity": 1832824,
+        "used": 564720,
+        "available": 1268104
+      },
+      "old_space": {
+        "memorySize": 2149167104,
+        "committedMemory": 2148966056,
+        "capacity": 2146418992,
+        "used": 2146312848,
+        "available": 106144
+      },
+      "code_space": {
+        "memorySize": 425984,
+        "committedMemory": 210400,
+        "capacity": 164448,
+        "used": 164448,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 266240,
+        "committedMemory": 241184,
+        "capacity": 169600,
+        "used": 169600,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3456,
+        "used": 3456,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1832824,
+        "used": 0,
+        "available": 1832824
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 31.636,
+    "kernelCpuSeconds": 1.33581,
+    "cpuConsumptionPercent": 137.383,
+    "maxRss": 2266656407552,
+    "pageFaults": {
+      "IORequired": 28,
+      "IONotRequired": 658403
+    },
+    "fsActivity": {
+      "reads": 0,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "NVM_CD_FLAGS": "",
+    "VSCODE_NODE_CACHED_DATA_DIR": "/Users/qiaokou/Library/Application Support/Code/CachedData/e5a624b788d92b8d34d1392e4c4d9789406efe8f",
+    "SHELL": "/bin/bash",
+    "AMD_ENTRYPOINT": "vs/workbench/services/extensions/node/extensionHostProcess",
+    "TMPDIR": "/var/folders/1b/fffz609557q0gx_8h1wdwmq40000gn/T/",
+    "Apple_PubSub_Socket_Render": "/private/tmp/com.apple.launchd.KSwcSyJIfw/Render",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "NVM_DIR": "/Users/qiaokou/.nvm",
+    "USER": "qiaokou",
+    "COMMAND_MODE": "unix2003",
+    "SSH_AUTH_SOCK": "/private/tmp/com.apple.launchd.KHutlfdBQf/Listeners",
+    "__CF_USER_TEXT_ENCODING": "0x1F5:0x19:0x34",
+    "VSCODE_LOG_STACK": "false",
+    "ELECTRON_RUN_AS_NODE": "1",
+    "VSCODE_LOGS": "/Users/qiaokou/Library/Application Support/Code/logs/20201114T210549",
+    "PATH": "/Users/qiaokou/.nvm/versions/node/v12.10.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public",
+    "_": "/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node",
+    "PWD": "/Users/qiaokou/qiaokou/projectfile/Firstnote/runcode",
+    "VSCODE_HANDLES_UNCAUGHT_ERRORS": "true",
+    "XPC_FLAGS": "0x0",
+    "XPC_SERVICE_NAME": "com.microsoft.VSCode.17592",
+    "SHLVL": "3",
+    "HOME": "/Users/qiaokou",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "PIPE_LOGGING": "true",
+    "VSCODE_IPC_HOOK_EXTHOST": "/var/folders/1b/fffz609557q0gx_8h1wdwmq40000gn/T/vscode-ipc-4681f5d2-b50c-469c-ad51-cfcced034bd1.sock",
+    "VSCODE_NLS_CONFIG": "{\"locale\":\"zh-cn\",\"availableLanguages\":{\"*\":\"zh-cn\"},\"_languagePackId\":\"3f660437720b8e18c20d879cd1ab0831.zh-cn\",\"_translationsConfigFile\":\"/Users/qiaokou/Library/Application Support/Code/clp/3f660437720b8e18c20d879cd1ab0831.zh-cn/tcf.json\",\"_cacheRoot\":\"/Users/qiaokou/Library/Application Support/Code/clp/3f660437720b8e18c20d879cd1ab0831.zh-cn\",\"_resolvedLanguagePackCoreLocation\":\"/Users/qiaokou/Library/Application Support/Code/clp/3f660437720b8e18c20d879cd1ab0831.zh-cn/e5a624b788d92b8d34d1392e4c4d9789406efe8f\",\"_corruptedFile\":\"/Users/qiaokou/Library/Application Support/Code/clp/3f660437720b8e18c20d879cd1ab0831.zh-cn/corrupted.info\",\"_languagePackSupport\":true}",
+    "LOGNAME": "qiaokou",
+    "VSCODE_IPC_HOOK": "/Users/qiaokou/Library/Application Support/Code/1.51.1-main.sock",
+    "NVM_BIN": "/Users/qiaokou/.nvm/versions/node/v12.10.0/bin",
+    "VSCODE_PID": "26342",
+    "VERBOSE_LOGGING": "true"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 24576,
+      "hard": "unlimited"
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": 67104768
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 1418,
+      "hard": 2128
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "/Users/qiaokou/.nvm/versions/node/v12.10.0/bin/node",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libobjc.A.dylib",
+    "/usr/lib/libDiagnosticMessagesClient.dylib",
+    "/usr/lib/libicucore.A.dylib",
+    "/usr/lib/libz.1.dylib",
+    "/usr/lib/libc++abi.dylib",
+    "/usr/lib/system/libcache.dylib",
+    "/usr/lib/system/libcommonCrypto.dylib",
+    "/usr/lib/system/libcompiler_rt.dylib",
+    "/usr/lib/system/libcopyfile.dylib",
+    "/usr/lib/system/libcorecrypto.dylib",
+    "/usr/lib/system/libdispatch.dylib",
+    "/usr/lib/system/libdyld.dylib",
+    "/usr/lib/system/libkeymgr.dylib",
+    "/usr/lib/system/liblaunch.dylib",
+    "/usr/lib/system/libmacho.dylib",
+    "/usr/lib/system/libquarantine.dylib",
+    "/usr/lib/system/libremovefile.dylib",
+    "/usr/lib/system/libsystem_asl.dylib",
+    "/usr/lib/system/libsystem_blocks.dylib",
+    "/usr/lib/system/libsystem_c.dylib",
+    "/usr/lib/system/libsystem_configuration.dylib",
+    "/usr/lib/system/libsystem_coreservices.dylib",
+    "/usr/lib/system/libsystem_darwin.dylib",
+    "/usr/lib/system/libsystem_dnssd.dylib",
+    "/usr/lib/system/libsystem_info.dylib",
+    "/usr/lib/system/libsystem_m.dylib",
+    "/usr/lib/system/libsystem_malloc.dylib",
+    "/usr/lib/system/libsystem_networkextension.dylib",
+    "/usr/lib/system/libsystem_notify.dylib",
+    "/usr/lib/system/libsystem_sandbox.dylib",
+    "/usr/lib/system/libsystem_secinit.dylib",
+    "/usr/lib/system/libsystem_kernel.dylib",
+    "/usr/lib/system/libsystem_platform.dylib",
+    "/usr/lib/system/libsystem_pthread.dylib",
+    "/usr/lib/system/libsystem_symptoms.dylib",
+    "/usr/lib/system/libsystem_trace.dylib",
+    "/usr/lib/system/libunwind.dylib",
+    "/usr/lib/system/libxpc.dylib",
+    "/System/Library/CoreServices/Encodings/libSimplifiedChineseConverter.dylib"
+  ]
+}

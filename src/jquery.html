@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script src="./assets/js/jquery.2.1.4.js"></script>
+  <script>
+    // $.ajax("/page1.php").then(
+    //   (resolve) => {
+    //     console.log(resolve);
+    //   },
+    //   (reject) => {
+    //     console.log(reject);
+    //   }
+    // );
+    // $.when($.ajax("/page1.php"), $.ajax("/page2.php")).then(
+    //   function (data, textStatus, jqXHR) {
+    //     alert(jqXHR.status);
+    //   },
+    //   function (obj) {
+    //     alert(obj.statusText);
+    //   }
+    // );
+    console.log($.ajax("/page1.php"));
+    console.log(pro(1));
+
+    // function posterror(params) {
+    //   throw new Error("err message");
+    // }
+    function pro(params) {
+      return new Promise((resolve, reject) => {
+        if (params) resolve(params);
+        else reject("fail");
+      });
+    }
+    // pro().then(
+    //   (res) => {
+    //     console.log(res);
+    //   },
+    //   (rej) => {
+    //     console.log(rej);
+    //   }
+    // );
+    // $.when(pro()).then(
+    //   (res) => {
+    //     console.log(res);
+    //   },
+    //   (rej) => {
+    //     console.log(rej);
+    //   }
+    // );
+    // $(function () {
+    //   $.when(pro()).then(
+    //     function (data) {
+    //       alert(data);
+    //     },
+    //     function (obj) {
+    //       alert("fuck");
+    //     }
+    //   );
+    // });
+
+    // pro(11).then((resolve) => {
+    //   console.log(resolve);
+    // });
+    // $.when(
+    //   pro(1),
+    //   pro(2),
+    //   pro(3),
+    //   pro()
+    //   // posterror()
+    // ).then(
+    //   (res) => {
+    //     console.log(res);
+    //   },
+    //   (reject) => {
+    //     console.log(reject);
+    //   }
+    // );
+    // .then((res) => {
+    //   res
+    //     .then((res) => {
+    //       console.log("success", res);
+    //     })
+    //     .catch((rej) => {
+    //       console.log("fail", rej);
+    //     });
+    // })
+    // .done(function (res) {
+    //   // res.then((res) => {
+    //   console.log("done", res);
+    //   // });
+    // })
+    // // .fail(function (rej) {
+    // //   console.log("fail", rej);
+    // // });
+    // .always(function (res) {
+    //   // params
+    //   //   .then((res) => {
+    //   console.log("always", res);
+    //   //   })
+    //   //   .catch((rej) => {
+    //   //     console.log("always-rej", rej);
+    //   //   });
+    // });
+  </script>
+</html>
